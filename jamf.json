@@ -33,6 +33,12 @@
             "description": "Password",
             "data_type": "password",
             "order": 2
+        },
+        "verify_server_cert": {
+            "description": "Verify server SSL certificate",
+            "data_type": "boolean",
+            "default": true,
+            "order": 3
         }
     },
     "actions": [

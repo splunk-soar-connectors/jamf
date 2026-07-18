@@ -197,7 +197,7 @@ class JamfConnector(BaseConnector):
                 url,
                 headers=headers,
                 auth=(self._username, self._password),  # basic authentication through test harness
-                verify=config.get('verify_server_cert', False),
+                verify=config.get('verify_server_cert', True),
                 **kwargs
             )
         except Exception as e:
