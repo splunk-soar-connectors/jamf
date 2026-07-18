@@ -13,7 +13,7 @@ from phantom.base_connector import BaseConnector
 from phantom.action_result import ActionResult
 
 from jamf_consts import *
-from urllib.parse import unquote
+from urllib.parse import quote, unquote
 import requests
 import json
 from bs4 import BeautifulSoup
@@ -249,7 +249,7 @@ class JamfConnector(BaseConnector):
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
 
-        username = param['username']
+        username = quote(str(param['username']), safe='')
 
         ret_val, response = self._make_rest_call('/users/name/{0}'.format(username), action_result)
 
