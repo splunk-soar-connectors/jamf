@@ -10,7 +10,7 @@
     "python_version": "3.9, 3.13",
     "product_version_regex": ".*",
     "publisher": "Splunk Community",
-    "license": "Copyright (c) 2021 Splunk Inc.",
+    "license": "Copyright (c) 2021-2026 Splunk Inc.",
     "app_version": "1.0.0",
     "utctime_updated": "2020-04-14T18:31:25.089506Z",
     "package_name": "phantom_jamf",
