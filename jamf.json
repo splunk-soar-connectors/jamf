@@ -12,7 +12,7 @@
     "publisher": "Splunk Community",
     "license": "Copyright (c) 2021-2026 Splunk Inc.",
     "app_version": "1.0.0",
-    "utctime_updated": "2020-04-14T18:31:25.089506Z",
+    "utctime_updated": "2026-07-30T20:52:51.266916Z",
     "package_name": "phantom_jamf",
     "main_module": "jamf_connector.py",
     "min_phantom_version": "4.9.39220",
