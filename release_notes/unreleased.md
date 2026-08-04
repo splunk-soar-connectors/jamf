@@ -1,3 +1,1 @@
 **Unreleased**
-
-* Rejected exact dot segments before using usernames in Jamf API paths.
