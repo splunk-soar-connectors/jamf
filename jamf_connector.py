@@ -8,7 +8,7 @@
 
 # Phantom App imports
 import json
-from urllib.parse import quote, unquote
+from urllib.parse import unquote
 
 import phantom.app as phantom
 import requests
@@ -17,6 +17,7 @@ from phantom.action_result import ActionResult
 from phantom.base_connector import BaseConnector
 
 from jamf_consts import *
+from jamf_validation import quote_username
 
 
 class RetVal(tuple):
@@ -226,7 +227,10 @@ class JamfConnector(BaseConnector):
         self.save_progress(f"In action handler for: {self.get_action_identifier()}")
         action_result = self.add_action_result(ActionResult(dict(param)))
 
-        username = quote(str(param["username"]), safe="")
+        try:
+            username = quote_username(param["username"])
+        except ValueError as exc:
+            return action_result.set_status(phantom.APP_ERROR, str(exc))
 
         ret_val, response = self._make_rest_call(f"/users/name/{username}", action_result)
 
